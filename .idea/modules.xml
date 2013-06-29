@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/calvaryweb.iml" filepath="$PROJECT_DIR$/calvaryweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calvaryweb-grailsPlugins.iml" filepath="$PROJECT_DIR$/calvaryweb-grailsPlugins.iml" />
+    </modules>
+  </component>
+</project>
+

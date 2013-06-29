@@ -1,0 +1,13 @@
+--- 
+applications: 
+- url: calvary.cfapps.io
+  memory: 128M
+  instances: 1
+  path: target/Calvary-0.1.war
+  services: 
+    cleardb-calvary: 
+      label: cleardb
+      plan: spark
+      version: n/a
+      provider: cleardb
+  name: calvary

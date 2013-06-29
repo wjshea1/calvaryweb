@@ -1,0 +1,67 @@
+1,0,0,Genesis,Old
+2,0,0,Exodus,Old
+3,0,0,Leviticus,Old
+4,0,0,Numbers,Old
+5,0,0,Deuteronomy,Old
+6,0,0,Joshua,Old
+7,0,0,Judges,Old
+8,0,0,Ruth,Old
+9,0,0,1 Samuel,Old
+10,0,0,2 Samuel,Old
+11,0,0,1 Kings,Old
+12,0,0,2 Kings,Old
+13,0,0,1 Chronicles,Old
+14,0,0,2 Chronicles,Old
+15,0,0,Ezra,Old
+16,0,0,Nehemiah,Old
+17,0,0,Esther,Old
+18,0,0,Job,Old
+19,0,0,Psalm,Old
+20,0,0,Proverbs,Old
+21,0,0,Ecclesiastes,Old
+22,0,0,Song of Solomon,Old
+23,0,0,Isaiah,Old
+24,0,0,Jeremiah,Old
+25,0,0,Lamentations,Old
+26,0,0,Ezekiel,Old
+27,0,0,Daniel,Old
+28,0,0,Hosea,Old
+29,0,0,Joel,Old
+30,0,0,Amos,Old
+31,0,0,Obadiah,Old
+32,0,0,Jonah,Old
+33,0,0,Micah,Old
+34,0,0,Nahum,Old
+35,0,0,Habakkuk,Old
+36,0,0,Zephaniah,Old
+37,0,0,Haggai,Old
+38,0,0,Zechariah,Old
+39,0,0,Malachi,Old
+40,0,0,Matthew,New
+41,0,0,Mark,New
+42,0,0,Luke,New
+43,0,0,John,New
+44,0,0,Acts,New
+45,0,0,Romans,New
+46,0,0,1 Corinthians,New
+47,0,0,2 Corinthians,New
+48,0,0,Galatians,New
+49,0,0,Ephesians,New
+50,0,0,Philippians,New
+51,0,0,Colossians,New
+52,0,0,1 Thessalonians,New
+53,0,0,2 Thessalonians,New
+54,0,0,1 Timothy,New
+55,0,0,2 Timothy,New
+56,0,0,Titus,New
+57,0,0,Philemon,New
+58,0,0,Hebrews,New
+59,0,0,James,New
+60,0,0,1 Peter,New
+61,0,0,2 Peter,New
+62,0,0,1 John,New
+63,0,0,2 John,New
+64,0,0,3 John,New
+65,0,0,Jude,New
+66,0,0,Revelation,New
+
