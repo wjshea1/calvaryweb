@@ -1,6 +1,7 @@
 package calvary
 
 import grails.converters.JSON
+import groovy.json.JsonBuilder
 
 class FeedsController {
 
@@ -100,6 +101,35 @@ class FeedsController {
     def guest() {}
 
     def itunes() {}
+
+    def menu() {
+        def myMenu =  Menu.get(params.id)
+        def data = []
+        if ( myMenu ){
+            data  = [
+                    success:true,
+                    menus: myMenu.items.collect {
+                        [name:it.name,
+                                url:it.itemURL,
+                                image: it.imageURL,
+                                data:it.metaData,
+                                itemType:it.itemType
+                        ]
+                    }
+            ]
+
+        }  else  {
+            data = [
+                 success:false,
+                 description:'no data found for request'
+            ]
+        }
+
+
+
+        render data as JSON
+
+    }
 
 
 
