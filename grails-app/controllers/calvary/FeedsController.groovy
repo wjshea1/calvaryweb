@@ -171,6 +171,34 @@ class FeedsController {
 
     }
 
+    def bookswithstudies () {
+      //  def query = Sermon.where {}.projections { distinct 'book'}
+
+
+        def results = Sermon.executeQuery('select distinct book from Sermon')
+        def data = []
+        if  ( results.size > 0 ) {
+            // render the resulting array
+               data  = [
+                    success:true,
+                    books: results.collect {
+                        [name:it.name,
+                                id:it.id,
+                                name: it.name,
+                        ]
+                    }
+            ]
+
+            }  else  {
+                data = [
+                        success:false,
+                        description:'no data found for request'
+                ]
+            }
+
+        render data as JSON
+    }
+
 
 
 }

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc288c5b-e420-4729-ac25-3c68393e11ed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/calvary/Book.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/calvary/Book.groovy" />
+    <list default="true" id="bc288c5b-e420-4729-ac25-3c68393e11ed" name="Default" comment="Added editional feed types and update some problem areas">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/domain/calvary/Featured.groovy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/controllers/calvary/PersonController.groovy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/controllers/calvary/SpeakersController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/calvary/FeedsController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/calvary/FeedsController.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/LoginController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/LoginController.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/LogoutController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/LogoutController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/calvary/Sermon.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/calvary/Sermon.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/calvary/SermonController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/calvary/SermonController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/calvary/Speakers.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/calvary/Speakers.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/sermon/_form.gsp" afterPath="$PROJECT_DIR$/grails-app/views/sermon/_form.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/sermon/list.gsp" afterPath="$PROJECT_DIR$/grails-app/views/sermon/list.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/i18n/messages_cs_CZ.properties" afterPath="$PROJECT_DIR$/grails-app/i18n/messages_cs_CZ.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/i18n/messages_de.properties" afterPath="$PROJECT_DIR$/grails-app/i18n/messages_de.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/i18n/messages_fr.properties" afterPath="$PROJECT_DIR$/grails-app/i18n/messages_fr.properties" />
@@ -20,8 +19,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/i18n/messages_ru.properties" afterPath="$PROJECT_DIR$/grails-app/i18n/messages_ru.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/i18n/messages_th.properties" afterPath="$PROJECT_DIR$/grails-app/i18n/messages_th.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/i18n/messages_zh_CN.properties" afterPath="$PROJECT_DIR$/grails-app/i18n/messages_zh_CN.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/sermon/show.gsp" afterPath="$PROJECT_DIR$/grails-app/views/sermon/show.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="calvaryweb.iws" />
@@ -33,7 +30,7 @@
     <file path="db-console:/caec506b/b54a1fa8-819d-47c1-8fa9-1171f00ed558/" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1369158699080" ignored="false" />
     <file path="$PROJECT_DIR$/../groovyscripts/.idea/workspace.xml" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1371140970695" ignored="false" />
     <file path="$PROJECT_DIR$/../groovyscripts/.idea/dataSources.xml" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1369178793336" ignored="false" />
-    <file path="/Dummy.txt" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1373680443845" ignored="false" />
+    <file path="/Dummy.txt" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1373684199259" ignored="false" />
     <file path="/a.dummy" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1371184226394" ignored="false" />
     <file path="$PROJECT_DIR$/../tda-webdev/app/js/template/symbollookup.html" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1369781287338" ignored="false" />
     <file path="$PROJECT_DIR$/../tda-webdev/app/js/views/symbollookview.js" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1369870215412" ignored="false" />
@@ -181,7 +178,7 @@
     <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.5.1.xsd" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1370965072681" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.2.6.xsd" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1370965072681" ignored="false" />
     <file path="$PROJECT_DIR$/test/unit/calvary/MenuTests.groovy" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1372539017827" ignored="false" />
-    <file path="/FeedsController.groovy" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1372551983547" ignored="false" />
+    <file path="/FeedsController.groovy" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1373683937962" ignored="false" />
     <file path="$PROJECT_DIR$/test/unit/calvary/FeaturedTests.groovy" changelist="bc288c5b-e420-4729-ac25-3c68393e11ed" time="1373167948588" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -278,6 +275,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/calvary/FeedsController.groovy" line="177" class="calvary.FeedsController" package="calvary">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
@@ -352,46 +364,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeedsController.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FeedsController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/calvary/FeedsController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="-3.070122">
+            <state line="197" column="0" selection-start="4872" selection-end="4872" vertical-scroll-proportion="-41.086956">
               <folding>
                 <element signature="e#17#46#0" expanded="true" />
-                <marker date="1373424878000" expanded="true" signature="3734:3749" placeholder="{" />
-                <marker date="1373424878000" expanded="true" signature="3851:3861" placeholder="}" />
+                <marker date="1373684121000" expanded="true" signature="3734:3749" placeholder="{" />
+                <marker date="1373684121000" expanded="true" signature="3851:3861" placeholder="}" />
+                <marker date="1373684121000" expanded="true" signature="4350:4872" placeholder="{...}" />
+                <marker date="1373684121000" expanded="true" signature="4688:4702" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calvary_app_dev.sermon" pinned="false" current="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/be3b5711/91c9194d-51d0-4ddd-be5f-d3d878a442e9/calvary_app_dev..sermon">
-          <provider editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+      <file leaf-file-name="PersonController.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/calvary/PersonController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="87" selection-start="804" selection-end="804" vertical-scroll-proportion="0.3328336">
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        </entry>
+      </file>
+      <file leaf-file-name="Book.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/calvary/Book.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="6" selection-start="23" selection-end="23" vertical-scroll-proportion="-0.6">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DispatcherServlet.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///usr/share/java/grails-2.2.2/lib/org.springframework/spring-webmvc/jars/spring-webmvc-3.1.4.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="19" selection-start="7018" selection-end="7018" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrameworkServlet.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///usr/share/java/grails-2.2.2/lib/org.springframework/spring-webmvc/jars/spring-webmvc-3.1.4.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="28" selection-start="6643" selection-end="6643" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -399,15 +404,6 @@
         <entry file="file://$PROJECT_DIR$/grails-app/views/sermon/list.gsp">
           <provider selected="true" editor-type-id="text-editor">
             <state line="34" column="4" selection-start="1476" selection-end="1476" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/LoginController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="6" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -431,7 +427,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="db-console:/be3b5711/825c0abe-0e88-4187-9f09-8efdd47ecb2a/" />
         <option value="$PROJECT_DIR$/grails-app/controllers/calvary/EventController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/calvary/Event.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/calvary/Menu.groovy" />
@@ -444,9 +439,10 @@
         <option value="$PROJECT_DIR$/grails-app/domain/calvary/Book.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/calvary/Speakers.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/sermon/list.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/calvary/FeedsController.groovy" />
         <option value="dbtable:/be3b5711/91c9194d-51d0-4ddd-be5f-d3d878a442e9/calvary_app_dev..sermon" />
         <option value="$PROJECT_DIR$/grails-app/controllers/calvary/SermonController.groovy" />
+        <option value="db-console:/be3b5711/2350ed4e-2646-462b-8444-060aeeb7d3ca/" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/calvary/FeedsController.groovy" />
       </list>
     </option>
   </component>
@@ -654,7 +650,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="Groovy.Shell.LastModule" value="calvaryweb" />
     <property name="Database.TableEditor.Splitter" value="0.9" />
@@ -888,26 +884,32 @@
       <created>1372553179701</created>
       <updated>1372553179701</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added editional feed types and update some problem areas">
+      <created>1373682606549</created>
+      <updated>1373682606549</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1916" height="1178" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986766" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24911536" sideWeight="0.42744064" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16791444" sideWeight="0.6899811" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16791444" sideWeight="0.6568998" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3100189" sideWeight="0.5385027" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3100189" sideWeight="0.5385027" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43194708" sideWeight="0.46149734" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.2994723" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3431002" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18502674" sideWeight="0.42438564" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -915,15 +917,13 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18502674" sideWeight="0.6899811" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18502674" sideWeight="0.6568998" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16162571" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32105264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986766" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3431002" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -969,7 +969,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Menu setup too to the product this will allow user to define there on menus in the application" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added editional feed types and update some problem areas" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -985,6 +985,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="First" />
     <MESSAGE value="Add Menu setup too to the product this will allow user to define there on menus in the application" />
+    <MESSAGE value="Added editional feed types and update some problem areas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -994,33 +995,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/calvary/Speakers.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="24" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/calvary/Menu.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/calvary/PersonController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="121" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/sermon/show.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="15.638298">
@@ -1063,33 +1037,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/share/java/grails-2.2.2/lib/org.springframework/spring-webmvc/jars/spring-webmvc-3.1.4.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="19" selection-start="7018" selection-end="7018" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/util/WeakHashMap.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="13" selection-start="2162" selection-end="2162" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="jar:///usr/share/java/grails-2.2.2/lib/org.springsource.springloaded/springloaded-core/jars/springloaded-core-1.1.1.jar!/org/springsource/loaded/ri/ReflectiveInterceptor.class">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/calvary/SermonController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="35" selection-start="7216" selection-end="7216" vertical-scroll-proportion="0.64852256">
+        <state line="30" column="5" selection-start="895" selection-end="895" vertical-scroll-proportion="23.0">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/be3b5711/91c9194d-51d0-4ddd-be5f-d3d878a442e9/calvary_app_dev..sermon">
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/calvary/Sermon.groovy">
@@ -1102,21 +1059,61 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/calvary/SermonController.groovy">
+    <entry file="jar:///usr/share/java/grails-2.2.2/lib/org.springsource.springloaded/springloaded-core/jars/springloaded-core-1.1.1.jar!/org/springsource/loaded/ri/ReflectiveInterceptor.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="5" selection-start="895" selection-end="895" vertical-scroll-proportion="23.0">
+        <state line="95" column="35" selection-start="7216" selection-end="7216" vertical-scroll-proportion="0.34633386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/share/java/grails-2.2.2/lib/org.springframework/spring-webmvc/jars/spring-webmvc-3.1.4.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="19" selection-start="7018" selection-end="7018" vertical-scroll-proportion="0.5085803">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://db-console:/be3b5711/2350ed4e-2646-462b-8444-060aeeb7d3ca/">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="33" selection-start="0" selection-end="35" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/calvary/Book.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="6" selection-start="23" selection-end="23" vertical-scroll-proportion="-0.6">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar:///usr/share/java/grails-2.2.2/lib/org.springsource.springloaded/springloaded-core/jars/springloaded-core-1.1.1.jar!/org/springsource/loaded/ri/ReloadedTypeInvoker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/calvary/FeedsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="78" selection-end="78" vertical-scroll-proportion="-3.070122">
+        <state line="197" column="0" selection-start="4872" selection-end="4872" vertical-scroll-proportion="-41.086956">
           <folding>
             <element signature="e#17#46#0" expanded="true" />
-            <marker date="1373424878000" expanded="true" signature="3734:3749" placeholder="{" />
-            <marker date="1373424878000" expanded="true" signature="3851:3861" placeholder="}" />
+            <marker date="1373684121000" expanded="true" signature="3734:3749" placeholder="{" />
+            <marker date="1373684121000" expanded="true" signature="3851:3861" placeholder="}" />
+            <marker date="1373684121000" expanded="true" signature="4350:4872" placeholder="{...}" />
+            <marker date="1373684121000" expanded="true" signature="4688:4702" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/calvary/PersonController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="87" selection-start="804" selection-end="804" vertical-scroll-proportion="0.3328336">
+          <folding />
         </state>
       </provider>
     </entry>
