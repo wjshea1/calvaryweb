@@ -86,11 +86,29 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${sermonInstance?.startChapter}">
+				<li class="fieldcontain">
+					<span id="startChapter-label" class="property-label"><g:message code="sermon.startChapter.label" default="Start Chapter" /></span>
+					
+						<span class="property-value" aria-labelledby="startChapter-label"><g:fieldValue bean="${sermonInstance}" field="startChapter"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${sermonInstance?.startVerse}">
 				<li class="fieldcontain">
 					<span id="startVerse-label" class="property-label"><g:message code="sermon.startVerse.label" default="Start Verse" /></span>
 					
 						<span class="property-value" aria-labelledby="startVerse-label"><g:fieldValue bean="${sermonInstance}" field="startVerse"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${sermonInstance?.endChapter}">
+				<li class="fieldcontain">
+					<span id="endChapter-label" class="property-label"><g:message code="sermon.endChapter.label" default="End Chapter" /></span>
+					
+						<span class="property-value" aria-labelledby="endChapter-label"><g:fieldValue bean="${sermonInstance}" field="endChapter"/></span>
 					
 				</li>
 				</g:if>
@@ -118,6 +136,24 @@
 					<span id="duration-label" class="property-label"><g:message code="sermon.duration.label" default="Duration" /></span>
 					
 						<span class="property-value" aria-labelledby="duration-label"><g:fieldValue bean="${sermonInstance}" field="duration"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${sermonInstance?.featured}">
+				<li class="fieldcontain">
+					<span id="featured-label" class="property-label"><g:message code="sermon.featured.label" default="Featured" /></span>
+					
+						<span class="property-value" aria-labelledby="featured-label"><g:formatBoolean boolean="${sermonInstance?.featured}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${sermonInstance?.speaker}">
+				<li class="fieldcontain">
+					<span id="speaker-label" class="property-label"><g:message code="sermon.speaker.label" default="Speaker" /></span>
+					
+						<span class="property-value" aria-labelledby="speaker-label"><g:link controller="speakers" action="show" id="${sermonInstance?.speaker?.id}">${sermonInstance?.speaker?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

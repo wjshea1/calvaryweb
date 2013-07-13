@@ -58,12 +58,28 @@
 	<g:select id="book" name="book.id" from="${calvary.Book.list()}" optionKey="id" value="${sermonInstance?.book?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: sermonInstance, field: 'startChapter', 'error')} required">
+	<label for="startChapter">
+		<g:message code="sermon.startChapter.label" default="Start Chapter" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="startChapter" type="number" value="${sermonInstance.startChapter}" required=""/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: sermonInstance, field: 'startVerse', 'error')} required">
 	<label for="startVerse">
 		<g:message code="sermon.startVerse.label" default="Start Verse" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="startVerse" type="number" value="${sermonInstance.startVerse}" required=""/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: sermonInstance, field: 'endChapter', 'error')} required">
+	<label for="endChapter">
+		<g:message code="sermon.endChapter.label" default="End Chapter" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="endChapter" type="number" value="${sermonInstance.endChapter}" required=""/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sermonInstance, field: 'endVerse', 'error')} required">
@@ -88,5 +104,21 @@
 		
 	</label>
 	<g:textField name="duration" value="${sermonInstance?.duration}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: sermonInstance, field: 'featured', 'error')} ">
+	<label for="featured">
+		<g:message code="sermon.featured.label" default="Featured" />
+		
+	</label>
+	<g:checkBox name="featured" value="${sermonInstance?.featured}" />
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: sermonInstance, field: 'speaker', 'error')} required">
+	<label for="speaker">
+		<g:message code="sermon.speaker.label" default="Speaker" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="speaker" name="speaker.id" from="${calvary.Speakers.list()}" optionKey="id" required="" value="${sermonInstance?.speaker?.id}" class="many-to-one"/>
 </div>
 

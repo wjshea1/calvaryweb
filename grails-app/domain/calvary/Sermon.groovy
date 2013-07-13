@@ -10,9 +10,13 @@ class Sermon {
         audioFileLocation url:true, blank: false
         imageFileLocation url:true, blank: false
         book blank:false, nullable:true
+        startChapter blank:false, nullable:true
         startVerse blank:false, nullable:true
+        endChapter blank:false, nullable:true
         endVerse   blank:false, nullable:true
         service inList:['Sunday', 'Wednesday', 'other']
+        speaker blank:true, nullable:true
+
 
     }
 
@@ -26,7 +30,11 @@ class Sermon {
     Book book
     // Create Speaker Class to make easier to sort and create dynamic feeds
     //Speaker speaker
+    int startChapter = 0
     int startVerse = 0
+    int endChapter = 0
     int endVerse   = 0
     String service = "Sunday"
+    boolean featured  = false;
+    Speakers speaker
 }

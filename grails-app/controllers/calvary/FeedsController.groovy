@@ -36,7 +36,7 @@ class FeedsController {
     def book() {
          def result
          def book = Book.get(params.id )
-         def list  = Sermon.findAllByBook(book, [sort: "title", order: "desc"])
+         def list  = Sermon.findAllByBook(book, [sort: "pubDate", order: "desc"])
          if (!list){
              result = [success:false]
              result.message = "No Studies found for that book, coming soon"
@@ -73,6 +73,9 @@ class FeedsController {
         render result as JSON
     }
 
+
+
+
     def events() {
 
         def list = Event.list()
@@ -98,7 +101,7 @@ class FeedsController {
 
     def wednesday() {}
 
-    def guest() {}
+
 
     def itunes() {}
 
@@ -131,6 +134,42 @@ class FeedsController {
 
     }
 
+    def featured() {
+
+        // featured
+        def list = Sermon.findWhere(featured:true)
+        def result = [success: true]
+        if ( !list ) {
+            result = [success:false]
+            result.message = "No News found, coming soon"
+        }  else {
+            result.data =  list
+        }
+        render result as JSON
+
+    }
+
+
+    def guest() {
+        def list =[]
+        def speakerList = Speakers.findAllWhere( guest:true )
+        for (speaker in speakerList) {
+
+              def list1 = Sermon.findBySpeaker(speaker)
+              if ( list1 )
+                  list += list1
+        }
+
+        def result = [success: true]
+        if ( !list ) {
+            result = [success:false]
+            result.message = "No News found, coming soon"
+        }  else {
+            result.data =  list
+        }
+        render result as JSON
+
+    }
 
 
 

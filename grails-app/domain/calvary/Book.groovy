@@ -12,6 +12,6 @@ class Book {
     int chapterCount
 
     String toString() {
-        return name;
+        return name
     }
 }

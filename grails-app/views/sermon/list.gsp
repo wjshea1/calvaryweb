@@ -32,10 +32,7 @@
 					
 						<g:sortableColumn property="keywords" title="${message(code: 'sermon.keywords.label', default: 'Keywords')}" />
 					
-						<g:sortableColumn property="audioFileLocation" title="${message(code: 'sermon.audioFileLocation.label', default: 'Audio File Location')}" />
-					
-						<g:sortableColumn property="imageFileLocation" title="${message(code: 'sermon.imageFileLocation.label', default: 'Image File Location')}" />
-					
+
 					</tr>
 				</thead>
 				<tbody>
@@ -45,15 +42,13 @@
 						<td><g:link action="show" id="${sermonInstance.id}">${fieldValue(bean: sermonInstance, field: "title")}</g:link></td>
 					
 						<td><g:formatDate date="${sermonInstance.pubDate}" /></td>
+
 					
 						<td>${fieldValue(bean: sermonInstance, field: "summary")}</td>
 					
 						<td>${fieldValue(bean: sermonInstance, field: "keywords")}</td>
 					
-						<td>${fieldValue(bean: sermonInstance, field: "audioFileLocation")}</td>
-					
-						<td>${fieldValue(bean: sermonInstance, field: "imageFileLocation")}</td>
-					
+
 					</tr>
 				</g:each>
 				</tbody>
