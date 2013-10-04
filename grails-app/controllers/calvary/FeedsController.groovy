@@ -36,7 +36,7 @@ class FeedsController {
     def book() {
          def result
          def book = Book.get(params.id )
-         def list  = Sermon.findAllByBook(book, [sort: "pubDate", order: "desc"])
+         def list  = Sermon.findAllByBook(book, [sort: "pubDate", order: "asc"])
          if (!list){
              result = [success:false]
              result.message = "No Studies found for that book, coming soon"
@@ -182,9 +182,9 @@ class FeedsController {
                data  = [
                     success:true,
                     books: results.collect {
-                        [name:it.name,
+                        [       name:it.name,
                                 id:it.id,
-                                name: it.name,
+
                         ]
                     }
             ]
@@ -197,6 +197,13 @@ class FeedsController {
             }
 
         render data as JSON
+    }
+
+
+    def rss {
+        render(feedType:"rss", feedVersion:"2.0"){
+
+        }
     }
 
 

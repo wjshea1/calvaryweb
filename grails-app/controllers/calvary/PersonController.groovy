@@ -2,7 +2,7 @@ package calvary
 
 import org.springframework.dao.DataIntegrityViolationException
 
-class sPersonController {
+class PersonController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 

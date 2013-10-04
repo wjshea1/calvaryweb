@@ -5,7 +5,7 @@ class Sermon {
     static constraints = {
         title size: 1..200, blank: false
         pubDate blank: false
-        summary size:1..300, blank: false
+        summary size:1..1024, blank: false
         keywords size:1..250, blank: false
         audioFileLocation url:true, blank: false
         imageFileLocation url:true, blank: false

@@ -7,7 +7,7 @@
 		<g:message code="newsItem.headline.label" default="Headline" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="headline" required="" value="${newsItemInstance?.headline}"/>
+	<g:textField name="headline" maxlength="200" required="" value="${newsItemInstance?.headline}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: newsItemInstance, field: 'description', 'error')} required">
@@ -15,7 +15,7 @@
 		<g:message code="newsItem.description.label" default="Description" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="description" required="" value="${newsItemInstance?.description}"/>
+	<g:textArea name="description" cols="40" rows="5" maxlength="1024" required="" value="${newsItemInstance?.description}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: newsItemInstance, field: 'internetLink', 'error')} ">
@@ -24,6 +24,14 @@
 		
 	</label>
 	<g:field type="url" name="internetLink" value="${newsItemInstance?.internetLink}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: newsItemInstance, field: 'imageLink', 'error')} ">
+	<label for="imageLink">
+		<g:message code="newsItem.imageLink.label" default="Image Link" />
+		
+	</label>
+	<g:field type="url" name="imageLink" value="${newsItemInstance?.imageLink}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: newsItemInstance, field: 'publishDate', 'error')} required">
