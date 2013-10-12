@@ -2,6 +2,8 @@ package calvary
 
 import grails.converters.JSON
 import groovy.json.JsonBuilder
+import com.sun.syndication.feed.synd.SyndImageImpl
+
 
 class FeedsController {
 
@@ -200,8 +202,57 @@ class FeedsController {
     }
 
 
-    def rss {
+    def rss() {
+
+        def podcast_keywords = "Christianity, Religeon, Calvary, Calvary Chapel, Mercer, Mercer Count, Calvary Mercer County, Bible Studies, Bible"
+
         render(feedType:"rss", feedVersion:"2.0"){
+           title = "Calvary Chapel of Mercer County – Sermon Archive"
+           link  = "http://www.ccmc.com"
+           description = "Welcome to the Audio Podcasts of Calvary Chapel of Mercer County, located in Ewing, New Jersey with Pastor Gregg Downs as our featured teacher.  .    To learn more about the ministry of Calvary Chapel of Mercer County, please log on to www.ccmercer.com.  May you be blessed by your study of God’s Word"
+            // itunes links
+            iTunes {
+                summary =  "Welcome to the Audio Podcasts of Calvary Chapel of Mercer County, located in Ewing, New Jersey with Pastor Gregg Downs as our featured teacher.  .    To learn more about the ministry of Calvary Chapel of Mercer County, please log on to www.ccmercer.com.  May you be blessed by your study of God’s Word"
+                keywords = podcast_keywords.tokenize(",")
+               // language = "en"
+                categories = ["Religion &amp; Spirituality","Christianity"]
+                author = "Calvary Chapel of Mercer County"
+                subtitle = "Podcasting Ministry of Calvary Chapel Mercer County"
+                explicit = false
+                ownerName = "Calvary Chapel Mercer County"
+                ownerEmailAddress = "connecting@ccmercer.com"
+                image = new URL("http://calvary.cfapps.io/images/ccmc-rss-logo.png")
+
+            }
+
+            Sermon.list(sort:'pubDate', order:'desc').each {  sermon->
+                entry {
+                    title = sermon.title
+                    link=sermon.audioFileURL
+                    enclosure(type: 'audio/mp3',
+                              url: "${sermon.audioFileURL}" ,
+                              length: 50416743)
+
+                    publishedDate = sermon.pubDate
+
+                    iTunes {
+                        author = sermon.speaker.name
+                        summary = sermon.summary
+                        keywords = sermon.keywords.tokenize(",")
+                        explicit = false
+
+                        //image = new URL("http://calvary.cfapps.io/images/ccmc-rss-logo.png")
+                        //durationText = "3600000"
+                    }
+
+
+
+                }
+
+
+            }
+
+
 
         }
     }

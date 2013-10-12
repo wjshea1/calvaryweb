@@ -94,5 +94,13 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'calvary.Person'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'calvary.PersonAuthority'
 grails.plugins.springsecurity.authority.className = 'calvary.Authority'
-grails.plugins.springsecurity.requestMap.className = 'calvary.Requestmap'
-grails.plugins.springsecurity.securityConfigType = 'Requestmap'
+//grails.plugins.springsecurity.requestMap.className = 'calvary.Requestmap'
+//grails.plugins.springsecurity.securityConfigType = 'Requestmap'
+//grails.plugins.springsecurity.controllerAnnotations.staticRules =
+
+// Added by the Spring Security Core plugin:
+//grails.plugins.springsecurity.userLookup.userDomainClassName = 'calvary.User'
+//grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'calvary.UserRole'
+//grails.plugins.springsecurity.authority.className = 'calvary.Role'
+
+grails.calvaryweb.media_file_location = "http://media.wjshea.com/"

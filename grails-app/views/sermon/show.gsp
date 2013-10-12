@@ -63,7 +63,7 @@
 				<li class="fieldcontain">
 					<span id="audioFileLocation-label" class="property-label"><g:message code="sermon.audioFileLocation.label" default="Audio File Location" /></span>
 					
-						<span class="property-value" aria-labelledby="audioFileLocation-label"><g:fieldValue bean="${sermonInstance}" field="audioFileLocation"/></span>
+						<span class="property-value" aria-labelledby="audioFileLocation-label"><g:fieldValue bean="${sermonInstance}" field="audioFileURL"/></span>
 					
 				</li>
 				</g:if>

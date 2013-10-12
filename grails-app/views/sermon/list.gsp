@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="bootstrap-main">
+        <r:require modules="bootstrap"/>
 		<g:set var="entityName" value="${message(code: 'sermon.label', default: 'Sermon')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -20,7 +21,7 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
+			<table class="table table-striped">
 				<thead>
 					<tr>
 					
@@ -29,9 +30,6 @@
 						<g:sortableColumn property="pubDate" title="${message(code: 'sermon.pubDate.label', default: 'Pub Date')}" />
 					
 						<g:sortableColumn property="summary" title="${message(code: 'sermon.summary.label', default: 'Summary')}" />
-					
-						<g:sortableColumn property="keywords" title="${message(code: 'sermon.keywords.label', default: 'Keywords')}" />
-					
 
 					</tr>
 				</thead>
@@ -45,9 +43,7 @@
 
 					
 						<td>${fieldValue(bean: sermonInstance, field: "summary")}</td>
-					
-						<td>${fieldValue(bean: sermonInstance, field: "keywords")}</td>
-					
+
 
 					</tr>
 				</g:each>

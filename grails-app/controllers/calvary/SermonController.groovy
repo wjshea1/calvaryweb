@@ -1,10 +1,14 @@
 package calvary
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
 
 class SermonController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+
+
+
 
     def index() {
         redirect(action: "list", params: params)
@@ -13,9 +17,11 @@ class SermonController {
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         params.sort = "pubDate"
+        params.order = "desc"
         [sermonInstanceList: Sermon.list(params), sermonInstanceTotal: Sermon.count()]
     }
 
+    @Secured(['ROLE_ADMIN'])
     def create() {
         [sermonInstance: new Sermon(params)]
     }
@@ -41,7 +47,7 @@ class SermonController {
 
         [sermonInstance: sermonInstance]
     }
-
+    @Secured(['ROLE_ADMIN'])
     def edit(Long id) {
         def sermonInstance = Sermon.get(id)
         if (!sermonInstance) {
@@ -52,7 +58,7 @@ class SermonController {
 
         [sermonInstance: sermonInstance]
     }
-
+    @Secured(['ROLE_ADMIN'])
     def update(Long id, Long version) {
         def sermonInstance = Sermon.get(id)
         if (!sermonInstance) {
@@ -81,7 +87,7 @@ class SermonController {
         flash.message = message(code: 'default.updated.message', args: [message(code: 'sermon.label', default: 'Sermon'), sermonInstance.id])
         redirect(action: "show", id: sermonInstance.id)
     }
-
+    @Secured(['ROLE_ADMIN'])
     def delete(Long id) {
         def sermonInstance = Sermon.get(id)
         if (!sermonInstance) {

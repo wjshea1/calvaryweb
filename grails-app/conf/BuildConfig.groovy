@@ -36,6 +36,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo 'http://repo.spring.io/milestone'
     }
 
     dependencies {
@@ -61,9 +62,10 @@ grails.project.dependency.resolution = {
         compile ':cache:1.0.1'
         compile ':feeds:1.6'
 
+        compile ':spring-security-core:1.2.7.3'
+        compile ':spring-security-ui:0.2'
+
         runtime ':twitter-bootstrap:2.3.2'
     }
 }
 
-grails.plugin.cloudfoundry.username = "bill.shea@gmail.com"
-grails.plugin.cloudfoundry.password = "windows1"
