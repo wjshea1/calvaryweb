@@ -2,6 +2,8 @@ package calvary
 
 import grails.converters.JSON
 import groovy.json.JsonBuilder
+import feedsplugin.FeedBuilder
+import com.sun.syndication.feed.module.itunes.types.*
 import com.sun.syndication.feed.synd.SyndImageImpl
 
 
@@ -208,8 +210,9 @@ class FeedsController {
 
         render(feedType:"rss", feedVersion:"2.0"){
            title = "Calvary Chapel of Mercer County – Sermon Archive"
-           link  = "http://www.ccmc.com"
+           link  = "http://calvary.cfapps.io/feeds/rss"
            description = "Welcome to the Audio Podcasts of Calvary Chapel of Mercer County, located in Ewing, New Jersey with Pastor Gregg Downs as our featured teacher.  .    To learn more about the ministry of Calvary Chapel of Mercer County, please log on to www.ccmercer.com.  May you be blessed by your study of God’s Word"
+           language = "en-us"
             // itunes links
             iTunes {
                 summary =  "Welcome to the Audio Podcasts of Calvary Chapel of Mercer County, located in Ewing, New Jersey with Pastor Gregg Downs as our featured teacher.  .    To learn more about the ministry of Calvary Chapel of Mercer County, please log on to www.ccmercer.com.  May you be blessed by your study of God’s Word"
@@ -222,6 +225,7 @@ class FeedsController {
                 ownerName = "Calvary Chapel Mercer County"
                 ownerEmailAddress = "connecting@ccmercer.com"
                 image = new URL("http://calvary.cfapps.io/images/ccmc-rss-logo.png")
+
 
             }
 
@@ -241,22 +245,79 @@ class FeedsController {
                         keywords = sermon.keywords.tokenize(",")
                         explicit = false
 
+
                         //image = new URL("http://calvary.cfapps.io/images/ccmc-rss-logo.png")
-                        //durationText = "3600000"
+                        //duration = "360000"
                     }
-
-
-
                 }
-
-
             }
-
-
-
         }
+    }
+    // This action is required because iTunes is unable to process a non-file
+    // I know I dont get either but whatever this works
+    // When I put this rails maybe it will work ;-)
+    def regenerateFeed() {
+
+        def podcast_keywords = "Christianity, Religeon, Calvary, Calvary Chapel, Mercer, Mercer Count, Calvary Mercer County, Bible Studies, Bible"
+       def builder = new FeedBuilder()
+       builder.feed {
+           title = "Calvary Chapel of Mercer County – Sermon Archive"
+           link  = "http://calvary.cfapps.io/feeds/rss"
+           description = "Welcome to the Audio Podcasts of Calvary Chapel of Mercer County, located in Ewing, New Jersey with Pastor Gregg Downs as our featured teacher.  .    To learn more about the ministry of Calvary Chapel of Mercer County, please log on to www.ccmercer.com.  May you be blessed by your study of God’s Word"
+           language = "en-us"
+           // itunes links
+           iTunes {
+               summary =  "Welcome to the Audio Podcasts of Calvary Chapel of Mercer County, located in Ewing, New Jersey with Pastor Gregg Downs as our featured teacher.  .    To learn more about the ministry of Calvary Chapel of Mercer County, please log on to www.ccmercer.com.  May you be blessed by your study of God’s Word"
+               keywords = podcast_keywords.tokenize(",")
+               // language = "en"
+               categories = ["Religion &amp; Spirituality","Christianity"]
+               author = "Calvary Chapel of Mercer County"
+               subtitle = "Podcasting Ministry of Calvary Chapel Mercer County"
+               explicit = false
+               ownerName = "Calvary Chapel Mercer County"
+               ownerEmailAddress = "connecting@ccmercer.com"
+               image = new URL("http://calvary.cfapps.io/images/ccmc-rss-logo.png")
+
+
+           }
+
+           Sermon.list(sort:'pubDate', order:'desc').each {  sermon->
+               entry {
+                   title = sermon.title
+                   link=sermon.audioFileURL
+                   enclosure(type: 'audio/mp3',
+                           url: "${sermon.audioFileURL}" ,
+                           length: 50416743)
+
+                   publishedDate = sermon.pubDate
+
+                   iTunes {
+                       author = sermon.speaker.name
+                       summary = sermon.summary
+                       keywords = sermon.keywords.tokenize(",")
+                       explicit = false
+
+
+                       //image = new URL("http://calvary.cfapps.io/images/ccmc-rss-logo.png")
+                       //durationText = "1:00:00"
+                   }
+               }
+           }
+
+
+
+       }
+        def filename = request.getSession().getServletContext().getRealPath("/") + 'feed.xml'
+        File file = new File (filename)
+        println filename
+        file.write(builder.render('rss'))
+        render 'done'
+
+    }
+
+
     }
 
 
 
-}
+

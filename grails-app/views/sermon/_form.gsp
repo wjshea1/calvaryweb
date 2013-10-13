@@ -39,7 +39,7 @@
 		<g:message code="sermon.audioFileLocation.label" default="Audio File Location" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="url" name="audioFileLocation" required="" value="${sermonInstance?.audioFileLocation}"/>
+	<g:field name="audioFileLocation" required="" value="${sermonInstance?.audioFileLocation}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sermonInstance, field: 'imageFileLocation', 'error')} required">

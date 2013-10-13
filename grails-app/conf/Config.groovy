@@ -103,4 +103,4 @@ grails.plugins.springsecurity.authority.className = 'calvary.Authority'
 //grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'calvary.UserRole'
 //grails.plugins.springsecurity.authority.className = 'calvary.Role'
 
-grails.calvaryweb.media_file_location = "http://media.wjshea.com/"
+grails.calvaryweb.media_file_location = "http://www.ccmercer.com/media/"
