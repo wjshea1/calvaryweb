@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="PodcastPlayer">
+
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" >
+            <ng-view>
+            </ng-view>
+       </div>
+    </div>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+<script>
+
+
+    var podcastPlayer = angular.module('PodcastPlayer', [])
+
+    // factories
+    podcastPlayer.factory('booksFactory', function($http){
+
+               return {
+                   getBooks: function() {
+                       return $http.get('feeds/bookswithstudies');
+                   }
+
+               } ;
+
+       });
+
+
+
+
+    podcastPlayer.factory('podcastsFactory', function($http, $routeParams){
+        return {
+            getPodcasts: function(){
+                return $http.get('feeds/book/' + $routeParams.bookId);
+            }
+
+        } ;
+    });
+
+    // Application
+    podcastPlayer.controller('BooksController', function($scope, booksFactory){
+        var handleSuccess = function(data, status) {
+            $scope.books = data.books;
+            console.log($scope.books);
+        };
+
+        booksFactory.getBooks().success(handleSuccess);
+
+    });
+
+    podcastPlayer.controller('MenuController', function($scope){
+
+    });
+
+    podcastPlayer.controller('PodcastController', function($scope){
+
+    });
+
+    podcastPlayer.controller('PodcastsController', function($scope,podcastsFactory ){
+
+        var handleSuccess = function(data, status ){
+            console.log(data);
+            $scope.podcasts = data.sermons;
+
+        };
+
+        podcastsFactory.getPodcasts().success(handleSuccess);
+
+
+    });
+
+
+    podcastPlayer.config(function($routeProvider){
+       $routeProvider
+            .when('/books',
+               {
+                   controller: 'BooksController' ,
+                   templateUrl: 'partials/booksview.html'
+               })
+            .when('/podcasts/:bookId',
+               {
+                   controller: 'PodcastsController',
+                   templateUrl: 'partials/podcastsview.html'
+               })
+             .when('/menu',
+               {
+                   controller: 'MenuController',
+                   templateUrl: 'partials/mainmenuview.html'
+               })
+               .when('/podcast/:castId',
+               {
+                    controller: 'PodcastController',
+                   templateUrl: 'partials/podcastview.html'
+               })
+
+
+            .otherwise({redirectTo:'/menu'});
+    });
+
+
+
+</script>
+<script src="//codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

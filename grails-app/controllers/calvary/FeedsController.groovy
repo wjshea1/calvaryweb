@@ -10,28 +10,47 @@ import com.sun.syndication.feed.synd.SyndImageImpl
 class FeedsController {
 
     def index() {
-        def sermonList = Sermon.list (sort:'pubDate', order:'desc')
+        def sermonList = Sermon.list (sort:'pubDate', order:'desc').collect{ [
+                id: it.id,
+                title: it.title,
+                summary: it.summary,
+                pubDate: it.pubDate,
+                audioFileLocation: it.audioFileURL,
+                imageFileLocation: it.imageFileLocation,
+                speaker: it.speaker.name
+        ]}
         render sermonList as JSON
     }
 
     def current() {
         println('current feed being called');
         def result = [success:true];
-        def sermonList = Sermon.list (sort:'pubDate', max:5, order:'desc')
-
         // we need to build a wrapper around the json
-        result.sermons = sermonList;
+        result.sermons = collectFieldsList(Sermon);
         render result as JSON
 
 
     }
 
+    def collectFieldsList(myList){
+       def feilds =myList.list (sort:'pubDate', max:20, order:'desc') .collect{ [
+                id: it.id,
+                title: it.title,
+                summary: it.summary,
+                pubDate: it.pubDate,
+                audioFileLocation: it.audioFileURL,
+                imageFileLocation: it.imageFileLocation,
+                speaker: it.speaker.name
+        ]}
+        return feilds
+    }
 
 
     def sermon () {
 
         def result = [success:true]
         def sermon = Sermon.get(params.id)
+        // Create a new object here to return the json in maybe collect
         result.sermons = sermon
         render result as JSON
 
@@ -46,7 +65,15 @@ class FeedsController {
              result.message = "No Studies found for that book, coming soon"
          }  else {
              result = [success:true]
-             result.sermons = list
+             result.sermons = list.collect { [
+                     id: it.id,
+                     title: it.title,
+                     summary: it.summary,
+                     pubDate: it.pubDate.getDateString(),
+                     audioFileLocation: it.audioFileURL,
+                     imageFileLocation: it.imageFileLocation,
+                     speaker: it.speaker.name
+             ]}
 
          }
          println "loadding book number = " + params.id
@@ -147,7 +174,15 @@ class FeedsController {
             result = [success:false]
             result.message = "No News found, coming soon"
         }  else {
-            result.data =  list
+            result.data =  list.collect { [
+                    id: it.id,
+                    title: it.title,
+                    summary: it.summary,
+                    pubDate: it.pubDate,
+                    audioFileLocation: it.audioFileURL,
+                    imageFileLocation: it.imageFileLocation,
+                    speaker: it.speaker.name
+            ]}
         }
         render result as JSON
 
@@ -261,7 +296,7 @@ class FeedsController {
         def podcast_keywords = "Christianity, Religeon, Calvary, Calvary Chapel, Mercer, Mercer Count, Calvary Mercer County, Bible Studies, Bible"
        def builder = new FeedBuilder()
        builder.feed {
-           title = "Calvary Chapel of Mercer County – Sermon Archive"
+           title = "Calvary Chapel of Mercer County Full Sermon Feed"
            link  = "http://calvary.cfapps.io/feeds/rss"
            description = "Welcome to the Audio Podcasts of Calvary Chapel of Mercer County, located in Ewing, New Jersey with Pastor Gregg Downs as our featured teacher.  .    To learn more about the ministry of Calvary Chapel of Mercer County, please log on to www.ccmercer.com.  May you be blessed by your study of God’s Word"
            language = "en-us"

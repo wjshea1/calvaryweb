@@ -28,6 +28,7 @@ class Sermon {
     String duration = "35:00"
     String imageFileLocation = "http://calvary.cfapps.io/static/images/ccmc-rss-logo.png"
     String audioFileLocation
+    String videoFileLocation
     Book book
     // Create Speaker Class to make easier to sort and create dynamic feeds
     //Speaker speaker
@@ -40,14 +41,13 @@ class Sermon {
     Speakers speaker
 
     def getAudioFileURL(){
-
-
         def myServer = grailsApplication.config.grails.calvaryweb.media_file_location
         def myURL = myServer + URLEncoder.encode(this.audioFileLocation)
-        println myURL
         return  myURL
 
     }
+
+
 
 
 

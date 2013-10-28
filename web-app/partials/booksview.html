@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="container" data-ng-controller="BooksController">
+    <h3>Select the book you would like study</h3>
+    <table class="table table-bordered">
+        <tr data-ng-repeat="book in books"><td><a ng-href="#/podcasts/{{book.id}}" >{{book.name}}</a></td></tr>
+    </table>
+</div>
