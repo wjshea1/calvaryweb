@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc288c5b-e420-4729-ac25-3c68393e11ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/partials/booksview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/app/js/controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/partials/mainmenuview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/player.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/partials/podcastsview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/partials/podcastview.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Calvary-0.1.war" afterPath="$PROJECT_DIR$/target/Calvary-0.1.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/calvary/FeedsController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/calvary/FeedsController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/calvary/Sermon.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/calvary/Sermon.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calvaryweb-grailsPlugins.iml" afterPath="$PROJECT_DIR$/calvaryweb-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calvaryweb.iml" afterPath="$PROJECT_DIR$/calvaryweb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="bc288c5b-e420-4729-ac25-3c68393e11ed" name="Default" comment="" />
     <ignored path="calvaryweb.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
@@ -507,7 +491,7 @@
       <file leaf-file-name="player.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web-app/player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="364" selection-end="364" vertical-scroll-proportion="-0.10186757">
+            <state line="10" column="0" selection-start="364" selection-end="364" vertical-scroll-proportion="0.25466892">
               <folding />
             </state>
           </provider>
@@ -1062,7 +1046,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21377331" sideWeight="0.5124378" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17412935" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17412935" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36301368" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1251,7 +1235,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/player.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="364" selection-end="364" vertical-scroll-proportion="-0.10186757">
+        <state line="10" column="0" selection-start="364" selection-end="364" vertical-scroll-proportion="0.25466892">
           <folding />
         </state>
       </provider>
