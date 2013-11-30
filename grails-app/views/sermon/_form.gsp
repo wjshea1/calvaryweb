@@ -50,6 +50,13 @@
 	<g:field type="url" name="imageFileLocation" required="" value="${sermonInstance?.imageFileLocation}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: sermonInstance, field: 'videoFileLocation', 'error')} required">
+    <label for="videoFileLoaction">
+        <g:message code="sermon.videoFileLoaction.label" default="Video File Location" />
+        <span class="required-indicator">*</span>
+    </label>
+    <g:field type="url" name="videoFileLocation" required="" value="${sermonInstance?.videoFileLocation}"/>
+</div>
 <div class="fieldcontain ${hasErrors(bean: sermonInstance, field: 'book', 'error')} ">
 	<label for="book">
 		<g:message code="sermon.book.label" default="Book" />

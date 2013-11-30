@@ -33,13 +33,15 @@ class FeedsController {
     }
 
     def collectFieldsList(myList){
-       def feilds =myList.list (sort:'pubDate', max:20, order:'desc') .collect{ [
+       def feilds =myList.list (sort:'pubDate', max:5, order:'desc') .collect{ [
                 id: it.id,
                 title: it.title,
                 summary: it.summary,
-                pubDate: it.pubDate,
+                pubDate: it.pubDate.getDateString(),
                 audioFileLocation: it.audioFileURL,
                 imageFileLocation: it.imageFileLocation,
+                videoFileLocation:  it.videoFileLocation,
+
                 speaker: it.speaker.name
         ]}
         return feilds
@@ -49,9 +51,21 @@ class FeedsController {
     def sermon () {
 
         def result = [success:true]
+        println "loading sermon = " + params.id
         def sermon = Sermon.get(params.id)
-        // Create a new object here to return the json in maybe collect
-        result.sermons = sermon
+        def builder = new groovy.json.JsonBuilder()
+        def sermonObj = builder.sermon {
+            id                sermon.id
+            title              sermon.title
+            summary            sermon.summary
+            audioFileLocation  sermon.audioFileLocation
+            imageFileLocation  sermon.imageFileLocation
+            videoFileLocation  sermon.videoFileLocation
+
+            speaker            sermon.speaker.name
+        }
+        result.sermon = sermonObj
+
         render result as JSON
 
     }
@@ -72,6 +86,8 @@ class FeedsController {
                      pubDate: it.pubDate.getDateString(),
                      audioFileLocation: it.audioFileURL,
                      imageFileLocation: it.imageFileLocation,
+                     videoFileLocation:  it.videoFileLocation,
+
                      speaker: it.speaker.name
              ]}
 

@@ -4,19 +4,29 @@
 <head>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/player.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Sermon Player</a>
+        </div>
+    </div>
+</div>
 
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-4" >
-            <ng-view>
-            </ng-view>
-       </div>
+    <div class="player-template">
+        <div class="row">
+            <div class="col-md-4" >
+                <ng-view>
+                </ng-view>
+           </div>
+        </div>
     </div>
 </div>
 
@@ -46,12 +56,50 @@
 
 
     podcastPlayer.factory('podcastsFactory', function($http, $routeParams){
+
+        // This is a javascript scope role in action pretty awesome stuff
+
+        var podcasts = [];
+        var currentId = 0;
+
         return {
+
             getPodcasts: function(){
-                return $http.get('feeds/book/' + $routeParams.bookId);
+                console.log($routeParams.bookId)
+                // logic here is simple
+                if (typeof $routeParams.bookId == 'undefined')
+                    return podcasts;
+
+                if ( $routeParams.bookId != currentId )
+
+                    currentId =  $routeParams.bookId;
+                    podcasts =  $http.get('feeds/book/' + $routeParams.bookId) ;
+
+                return podcasts;
+            }
+        } ;
+    });
+
+
+
+
+    podcastPlayer.factory('podcastFactory', function($http, $routeParams){
+
+        return {
+            getPodcast: function(){
+                return $http.get('feeds/sermon/' + $routeParams.podcastId);
             }
 
-        } ;
+        };
+
+    });
+
+    podcastPlayer.factory('recentFactory', function($http){
+        return {
+            getRecentPodcasts: function() {
+                return $http.get('feeds/current');
+            }
+        };
     });
 
     // Application
@@ -69,11 +117,30 @@
 
     });
 
-    podcastPlayer.controller('PodcastController', function($scope){
+    podcastPlayer.controller('PodcastController', function($scope, $routeParams, podcastsFactory){
+        console.log( "About to load podcast to podcasts");
+
+        // console.log( $scope.podcasts );
+        //$scope.podcast = $scope.podcasts[$routeParams.podcastId];
+        var handleSuccess = function(data, status){
+            console.log(data)
+            // need to handle case where book has not been defined and podcast array is empty
+            for ( i  = 0; i < data.sermons.length; ++i){
+
+                if ( data.sermons[i].id == $routeParams.podcastId)     {
+                    $scope.podcast =  data.sermons[i];
+                    break;
+                }
+
+
+            }
+        }
+        podcastsFactory.getPodcasts().success(handleSuccess);
+
 
     });
 
-    podcastPlayer.controller('PodcastsController', function($scope,podcastsFactory ){
+    podcastPlayer.controller('PodcastsController', function($scope ,podcastsFactory ){
 
         var handleSuccess = function(data, status ){
             console.log(data);
@@ -81,9 +148,19 @@
 
         };
 
+
+        console.log('About to get podcast data');
         podcastsFactory.getPodcasts().success(handleSuccess);
 
 
+    });
+
+    podcastPlayer.controller('RecentController', function($scope, recentFactory){
+        var handleSuccess = function( data, status ){
+            console.log( data );
+            $scope.podcasts = data.sermons;
+        }
+        recentFactory.getRecentPodcasts().success(handleSuccess);
     });
 
 
@@ -104,10 +181,14 @@
                    controller: 'MenuController',
                    templateUrl: 'partials/mainmenuview.html'
                })
-               .when('/podcast/:castId',
+               .when('/podcast/:podcastId',
                {
                     controller: 'PodcastController',
                    templateUrl: 'partials/podcastview.html'
+               })
+               .when('/recent', {
+                    controller: 'RecentController', 
+                    templateUrl: 'partials/recentview.html'
                })
 
 

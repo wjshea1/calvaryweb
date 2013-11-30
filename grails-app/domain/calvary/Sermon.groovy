@@ -10,6 +10,7 @@ class Sermon {
         keywords size:1..250, blank: false
         audioFileLocation blank: false
         imageFileLocation url:true, blank: false
+        videoFileLocation url:true, blank:true, nullable:true
         book blank:false, nullable:true
         startChapter blank:false, nullable:true
         startVerse blank:false, nullable:true
@@ -26,7 +27,7 @@ class Sermon {
     String summary
     String keywords
     String duration = "35:00"
-    String imageFileLocation = "http://calvary.cfapps.io/static/images/ccmc-rss-logo.png"
+    String imageFileLocation = "http://www.ccmercer.com/media/ccmc-rss-logo-150.png"
     String audioFileLocation
     String videoFileLocation
     Book book
@@ -47,9 +48,16 @@ class Sermon {
 
     }
 
+    def hasVideoFile() {
+        if ( videoFileLocation == "" || videFileLocation == null) {
+            return false
+        }
+        return true
+    }
 
 
 
 
-    static transients = ['audioFileURL']
+
+    static transients = ['audioFileURL', 'hasVideoFile']
 }

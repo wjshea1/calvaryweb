@@ -1,4 +1,9 @@
 <div class="container" data-ng-controller="PodcastController">
-    <h3></h3>
-    <player></player>
+    <img src="http://www.ccmercer.com/media/ccmc-rss-logo-150.png"/>
+    <h3>{{podcast.title}}</h3>
+    <audio controls>
+        <source ng-src="{{podcast.audioFileLocation}}" type="audio/mpeg">
+    </audio>
+    <P>{{podcast.summary}}</P>
+
 </div>
