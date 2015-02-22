@@ -1,0 +1,25 @@
+
+<div class="container" data-ng-controller="RecentController">
+
+
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Studies</div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <tr data-ng-repeat="podcast in podcasts">
+                    <!-- <td><img ng-src="{{podcast.imageFileLocation}}" class="img-rounded"/></td>   -->
+                    <td align="left"><b><a href="#/podcast/{{podcast.id}}">{{podcast.title}}</a></b></td>
+                    <td align="center">{{podcast.pubDate}}</td>
+                    <td><a href="{{podcast.audioFileLocation}}" target="_blank"><span class="glyphicon glyphicon-cloud-download"></span></a></td>
+                    <td><a href="{{podcast.audioFileLocation}}"><span class="glyphicon glyphicon-music"></span></a></td>
+                    <td> <!-- Version with Video --><span ng-show='podcast.videoFileLocation.length > 0'><a href="{{podcast.videoFileLocation}}"><span class="glyphicon glyphicon-hd-video"></span></a></span></td>
+                    <td> <!-- Version with Video --><span ng-show='podcast.pdfFileURL.length > 0'><a href="{{podcast.pdfFileLocation}}"><span class="glyphicon glyphicon-file"></span></a></span></td>
+                    <!--
+                    <td><a href="{{podcast.audioFileLocation}}"><span class="glyphicon glyphicon-hd-video"></span></a></td>
+                    -->
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

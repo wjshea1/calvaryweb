@@ -67,6 +67,16 @@
 					
 				</li>
 				</g:if>
+
+
+				<g:if test="${sermonInstance?.pdfFileLocation}">
+					<li class="fieldcontain">
+						<span id="audioFileLocation-label" class="property-label"><g:message code="sermon.pdfFileLocation.label" default="PDF File Location" /></span>
+
+						<span class="property-value" aria-labelledby="pdfFileLocation-label"><g:fieldValue bean="${sermonInstance}" field="pdfFileURL"/></span>
+
+					</li>
+				</g:if>
 			
 				<g:if test="${sermonInstance?.imageFileLocation}">
 				<li class="fieldcontain">

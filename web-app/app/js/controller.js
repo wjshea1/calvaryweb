@@ -9,7 +9,7 @@
 var playerApp = angular.module('playerApp', []);
 
 playerApp.controller('playerMainCtrl', function PlayerMainCtrl($scope, $http) {
-    $http.get('feeds/current').success(function(data)) {
+    $http.get('feeds/current').success(function(data) {
         $scope.items = data;
-    }  );
+    }  )
 });

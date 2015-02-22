@@ -14,7 +14,7 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://localhost/calvary_app_dev"
+            url = "jdbc:mysql://localhost/ccmc_development"
         }
     }
     test {

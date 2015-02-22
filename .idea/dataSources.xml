@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1964359606">
-    <data-source source="LOCAL" name="Data Source" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="7d8be9b7-fd1c-4c0e-abd4-92c5c0564af1">
+  <component name="DataSourceManagerImpl" format="xml" hash="778685508">
+    <data-source source="LOCAL" name="Data Source" uuid="7d8be9b7-fd1c-4c0e-abd4-92c5c0564af1">
+      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc://localhost/calvary_app_dev</jdbc-url>
-      <user-name>root</user-name>
       <libraries>
         <library>
           <url>jar://$PROJECT_DIR$/mysql-connector-java-5.1.18-bin.jar!/</url>
@@ -14,27 +14,12 @@
           <url>file://$PROJECT_DIR$/mysql-connector-license.txt</url>
         </library>
       </libraries>
-      <ssh-properties>
-        <enabled>false</enabled>
-        <proxy-host />
-        <proxy-port>22</proxy-port>
-        <user />
-        <use-password>true</use-password>
-        <password />
-        <private-key-path />
-        <passphrase />
-        <remote-host />
-        <remote-port />
-        <local-port />
-      </ssh-properties>
     </data-source>
-    <data-source source="LOCAL" name="Calvary_web_dev" product="MySQL" version="5.6.11" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )" uuid="2350ed4e-2646-462b-8444-060aeeb7d3ca">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="Calvary_web_dev" uuid="2350ed4e-2646-462b-8444-060aeeb7d3ca">
+      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost/calvary_app_dev</jdbc-url>
-      <user-name>root</user-name>
       <libraries>
         <library>
           <url>jar://$PROJECT_DIR$/../mysql-connector-java-5.1.22-bin.jar!/</url>
@@ -44,14 +29,11 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="CloudDB" product="MySQL" version="5.5.31-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} )" uuid="c3e5cf0d-920a-46c5-8cf7-cd72f5510175">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="CloudDB" uuid="c3e5cf0d-920a-46c5-8cf7-cd72f5510175">
+      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://us-cdbr-east-04.cleardb.com/ad_5eb6722885d57c7</jdbc-url>
-      <user-name>b4d307d3294233</user-name>
-      <user-password>df9bdf9edf9edf99dfcfdf9fdf93dfcf</user-password>
       <libraries>
         <library>
           <url>jar://$PROJECT_DIR$/mysql-connector-java-5.1.26-bin.jar!/</url>
@@ -61,6 +43,19 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="MySQL - ccmc_development@localhost" uuid="34a2f389-e3e6-43f3-a0ad-9731dd819d0a">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/ccmc_development</jdbc-url>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+      <libraries />
+    </data-source>
   </component>
 </project>
-

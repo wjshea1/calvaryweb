@@ -17,6 +17,7 @@ class FeedsController {
                 pubDate: it.pubDate,
                 audioFileLocation: it.audioFileURL,
                 imageFileLocation: it.imageFileLocation,
+                pdfFileLocation: it.pdfFileURL,
                 speaker: it.speaker.name
         ]}
         render sermonList as JSON
@@ -41,7 +42,7 @@ class FeedsController {
                 audioFileLocation: it.audioFileURL,
                 imageFileLocation: it.imageFileLocation,
                 videoFileLocation:  it.videoFileLocation,
-
+                pdfFileLocation: it.pdfFileURL,
                 speaker: it.speaker.name
         ]}
         return feilds
@@ -61,7 +62,7 @@ class FeedsController {
             audioFileLocation  sermon.audioFileLocation
             imageFileLocation  sermon.imageFileLocation
             videoFileLocation  sermon.videoFileLocation
-
+            pdfFileLocation    sermon.pdfFileURL
             speaker            sermon.speaker.name
         }
         result.sermon = sermonObj

@@ -11,6 +11,7 @@ class Sermon {
         audioFileLocation blank: false
         imageFileLocation url:true, blank: false
         videoFileLocation url:true, blank:true, nullable:true
+        pdfFileLocation blank:true, nullable: true
         book blank:false, nullable:true
         startChapter blank:false, nullable:true
         startVerse blank:false, nullable:true
@@ -30,6 +31,7 @@ class Sermon {
     String imageFileLocation = "http://www.ccmercer.com/media/ccmc-rss-logo-150.png"
     String audioFileLocation
     String videoFileLocation
+    String pdfFileLocation
     Book book
     // Create Speaker Class to make easier to sort and create dynamic feeds
     //Speaker speaker
@@ -40,6 +42,12 @@ class Sermon {
     String service = "Sunday"
     boolean featured  = false;
     Speakers speaker
+
+    def getPdfFileURL(){
+        def myServer = grailsApplication.config.grails.calvaryweb.media_file_location
+        def myURL = myServer + URLEncoder.encode(this.pdfFileLocation)
+        return  myURL
+    }
 
     def getAudioFileURL(){
         def myServer = grailsApplication.config.grails.calvaryweb.media_file_location
@@ -59,5 +67,5 @@ class Sermon {
 
 
 
-    static transients = ['audioFileURL', 'hasVideoFile']
+    static transients = ['audioFileURL', 'hasVideoFile','pdfFileURL']
 }
